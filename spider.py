@@ -1,11 +1,12 @@
 from time import sleep
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.edge.service import Service
+#from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.by import By
 
-service = Service('chromedriver.exe')
+#service = Service('chromedriver.exe')
 options = webdriver.ChromeOptions()
 options.add_argument('--headless=chrome')
 
