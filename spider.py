@@ -1,18 +1,17 @@
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.edge.service import Service
-#from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.by import By
 
-#service = Service('chromedriver.exe')
-options = webdriver.ChromeOptions()
-options.add_argument('--headless=chrome')
+service = Service('msedgedriver.exe')
+options = webdriver.EdgeOptions()
+options.headless = True
 
 if __name__ == '__main__':
 
-    with webdriver.Chrome(service=service, options=options) as driver:
+    with webdriver.Edge(service=service, options=options) as driver:
         driver.get("http://quotes.toscrape.com/login")
         WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.ID, "password")))
         username = driver.find_element(by=By.ID, value="username")
@@ -30,4 +29,4 @@ if __name__ == '__main__':
         for link in links:
             print(link.get_attribute('href'))
 
-        sleep(3)
+        sleep(30)

@@ -1,5 +1,4 @@
 import json
-
 import scrapy
 from itemadapter import ItemAdapter
 from scrapy.crawler import CrawlerProcess
@@ -79,7 +78,3 @@ if __name__ == '__main__':
     process.crawl(QuotesSpider)
     process.start()
 
-
-
-# ban IP
-# ban 
